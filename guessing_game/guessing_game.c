@@ -6,7 +6,7 @@ int main(){
     srand(time(NULL));
     int user_guess, comp_guess = (rand() % 100) + 1, no_of_attempt = 0;
     printf("\nGuess the number\n");
-    printf("\n%d\n", comp_guess);
+    // printf("\n%d\n", comp_guess);
 
     while(1){
         printf("\nPlease enter your guess between(1 to 100): ");
