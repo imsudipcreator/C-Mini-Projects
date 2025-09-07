@@ -1,23 +1,17 @@
 #include <stdio.h>
-#include <string.h>
-
-char *slice(char string[], int n, int m);
 
 int main()
 {
-    char str[] = "SudipMahata";
-    printf("%s", slice(str, 2, 5));
+    FILE *fptr;
+    fptr = fopen("sample.txt", "r");
+    int a, b;
+    fscanf(fptr, "%d", &a);
+    fscanf(fptr, "%d", &b);
+
+    fclose(fptr);
+
+    fptr = fopen("sample.txt", "w");
+    fprintf(fptr, "%d", a + b);
+    fclose(fptr);
     return 0;
-}
-
-char *slice(char string[], int n, int m)
-{
-    static char slicedString[100];
-    int index = 0;
-    for(int i = n; i <= m; i++){
-        // strcat(slicedString, string[i]);
-        slicedString[index++] = string[i];
-    }
-
-    return slicedString;
 }
