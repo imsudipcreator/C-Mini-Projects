@@ -2,10 +2,11 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Converter"
-#define MyAppVersion "1.0.0"
+#define MyAppVersion "1.0.1"
 #define MyAppPublisher "Imago llc"
 #define MyAppURL "https://imagollc.vercel.app/"
 #define MyAppExeName "converter.exe"
+#define MyAppIcoName "converter.ico"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application. Do not use the same AppId value in installers for other applications.
@@ -28,16 +29,18 @@ OutputDir=C:\Users\lenovo\Desktop\Development\C
 OutputBaseFilename=converter-1.0-setup
 SolidCompression=yes
 WizardStyle=modern
+SetupIconFile=C:\Users\lenovo\Desktop\Development\C\Projects\number_system_converter\assets\converter.ico
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Files]
 Source: "C:\Users\lenovo\Desktop\Development\C\Projects\number_system_converter\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\lenovo\Desktop\Development\C\Projects\number_system_converter\assets\{#MyAppIcoName}"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
-Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
+Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; IconFilename: "{app}\converter.ico"
 Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"
 
 [Run]
